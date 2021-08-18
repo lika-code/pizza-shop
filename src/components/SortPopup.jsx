@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 function SortPopup({items}) {
 	const [visiblePopup, setVisiblePopup] = useState(false);
     const [activeItem, setActiveItem] = useState(0);
-    const activeLabel = items[activeItem];
+    const activeLabel = items[activeItem].name;
 	//useRef хук для хранения ссылок на DOM элементы, props, переменные, функции
 	//useRef хранит всегда актуальное значение
 	const sortRef = useRef();
@@ -49,13 +49,13 @@ function SortPopup({items}) {
 				<div className='sort__popup'>
 					<ul>
 						{items &&
-							items.map((name, index) => {
+							items.map((obj, index) => {
 								return (
 									<li
 										className={activeItem === index ? 'active' : ''}
 										onClick={() => onSelectItem(index)}
-										key={`${name}_${index}`}>
-										{name}
+										key={`${obj.type}_${index}`}>
+										{obj.name}
 									</li>
 								);
 							})}
