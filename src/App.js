@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route } from "react-router-dom";
 import { Header } from "./components/";
-import { useDispatch } from "react-redux";
 import { Home, Cart } from "./pages/";
-import { setPizzas } from './redux/actions/pizzas'
 
 function App() {
 
